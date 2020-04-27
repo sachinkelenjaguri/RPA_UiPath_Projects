@@ -1,0 +1,292 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="779.2,3375.2" sap2010:WorkflowViewState.IdRef="Main_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Plugin.Workflow</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.Collections.Immutable</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <sap:WorkflowViewStateService.ViewState>
+    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+      <x:Boolean x:Key="ShouldCollapseAll">False</x:Boolean>
+      <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
+    </scg:Dictionary>
+  </sap:WorkflowViewStateService.ViewState>
+  <Sequence DisplayName="Web Main" sap:VirtualizedContainerService.HintSize="739.2,3255.2" sap2010:WorkflowViewState.IdRef="Sequence_4">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Name="customersData" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:ReadRange AddHeaders="True" DataTable="[customersData]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="716.8,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="customers.xlsx">
+      <ui:ReadRange.Range>
+        <InArgument x:TypeArguments="x:String">
+          <Literal x:TypeArguments="x:String" Value="" />
+        </InArgument>
+      </ui:ReadRange.Range>
+    </ui:ReadRange>
+    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="716.8,497.6" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+      <ui:CommentOut.Body>
+        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="436.8,419.2" sap2010:WorkflowViewState.IdRef="Sequence_8">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:ExcelApplicationScope Password="{x:Null}" CreateNewFile="False" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="414.4,294.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_2" ReadOnly="True" WorkbookPath="customers.xlsx">
+            <ui:ExcelApplicationScope.Body>
+              <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                <ActivityAction.Argument>
+                  <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                </ActivityAction.Argument>
+                <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="336.8,184.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <ui:ExcelReadRange AddHeaders="True" DataTable="[customersData]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="314.4,60" sap2010:WorkflowViewState.IdRef="ExcelReadRange_1" SheetName="Sheet1">
+                    <ui:ExcelReadRange.Range>
+                      <InArgument x:TypeArguments="x:String">
+                        <Literal x:TypeArguments="x:String" Value="" />
+                      </InArgument>
+                    </ui:ExcelReadRange.Range>
+                  </ui:ExcelReadRange>
+                </Sequence>
+              </ActivityAction>
+            </ui:ExcelApplicationScope.Body>
+          </ui:ExcelApplicationScope>
+        </Sequence>
+      </ui:CommentOut.Body>
+    </ui:CommentOut>
+    <ui:OpenBrowser UiBrowser="{x:Null}" BrowserType="Chrome" DisplayName="Private: Open Browser" Hidden="False" sap:VirtualizedContainerService.HintSize="716.8,2464.8" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" NewSession="True" Private="False" Url="https://rpacrm.bubbleapps.io/">
+      <ui:OpenBrowser.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+          </ActivityAction.Argument>
+          <While sap:VirtualizedContainerService.HintSize="702.4,2364.8" sap2010:WorkflowViewState.IdRef="While_1">
+            <While.Variables>
+              <Variable x:TypeArguments="x:Int32" Default="0" Name="rowNumber" />
+            </While.Variables>
+            <While.Condition>[rowNumber &lt; customersData.Rows.count]</While.Condition>
+            <Sequence sap:VirtualizedContainerService.HintSize="676.8,2205.6" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:TypeInto DelayBetweenKeys="{x:Null}" Activate="True" ClickBeforeTyping="False" DelayBefore="5" DelayMS="5" DisplayName="Type First Name" EmptyField="True" sap:VirtualizedContainerService.HintSize="654.4,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_3" SendWindowMessages="False" SimulateType="True" Text="[customersData(rowNumber)(&quot;first name&quot;).tostring]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="c2c3b754f39115a65628bc2d97c8f7dd" Selector="&lt;webctrl tabindex='1' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:TypeInto DelayBetweenKeys="{x:Null}" Activate="True" ClickBeforeTyping="False" DelayBefore="5" DelayMS="5" DisplayName="Type Last Name" EmptyField="True" sap:VirtualizedContainerService.HintSize="654.4,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_4" SendWindowMessages="False" SimulateType="True" Text="[customersData(rowNumber)(&quot;last name&quot;).tostring]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="8311c325be4aee369d33c18ddc62a32e" Selector="&lt;webctrl tabindex='2' tag='INPUT' /&gt;" WaitForReady="INTERACTIVE" />
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <If Condition="[customersData(rowNumber)(&quot;gender&quot;).tostring = &quot;Female&quot;]" DisplayName="Select Gender" sap:VirtualizedContainerService.HintSize="654.4,256.8" sap2010:WorkflowViewState.IdRef="If_1">
+                <If.Then>
+                  <ui:Click ClickType="CLICK_SINGLE" DelayBefore="5" DelayMS="5" DisplayName="Click Female" sap:VirtualizedContainerService.HintSize="314.4,107.2" sap2010:WorkflowViewState.IdRef="Click_1" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="1d3654e0fa90210c8136430e3e7afa72" Selector="&lt;webctrl aaname='Female' tag='LABEL' /&gt;" WaitForReady="INTERACTIVE" />
+                    </ui:Click.Target>
+                  </ui:Click>
+                </If.Then>
+                <If.Else>
+                  <ui:Click ClickType="CLICK_SINGLE" DelayBefore="5" DelayMS="5" DisplayName="Click Male" sap:VirtualizedContainerService.HintSize="314.4,107.2" sap2010:WorkflowViewState.IdRef="Click_2" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                    <ui:Click.CursorPosition>
+                      <ui:CursorPosition Position="Center">
+                        <ui:CursorPosition.OffsetX>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetX>
+                        <ui:CursorPosition.OffsetY>
+                          <InArgument x:TypeArguments="x:Int32" />
+                        </ui:CursorPosition.OffsetY>
+                      </ui:CursorPosition>
+                    </ui:Click.CursorPosition>
+                    <ui:Click.Target>
+                      <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="6c07e39c962931e0dc2a1170378b9019" Selector="&lt;webctrl aaname='Male' tag='LABEL' /&gt;" WaitForReady="INTERACTIVE" />
+                    </ui:Click.Target>
+                  </ui:Click>
+                </If.Else>
+              </If>
+              <ui:TypeInto DelayBetweenKeys="{x:Null}" Activate="True" ClickBeforeTyping="False" DelayBefore="5" DelayMS="5" DisplayName="Type Address" EmptyField="False" sap:VirtualizedContainerService.HintSize="654.4,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_5" SendWindowMessages="False" SimulateType="True" Text="[customersData(rowNumber)(&quot;address&quot;).tostring]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="d874e615b8723bbc457013d8557d4c5b" Selector="&lt;webctrl tabindex='4' tag='INPUT' type='input' /&gt;" WaitForReady="INTERACTIVE" />
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:TypeInto DelayBetweenKeys="{x:Null}" Activate="True" ClickBeforeTyping="False" DelayBefore="5" DelayMS="5" DisplayName="Type City" EmptyField="False" sap:VirtualizedContainerService.HintSize="654.4,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_6" SendWindowMessages="False" SimulateType="True" Text="[customersData(rowNumber)(&quot;city&quot;).tostring]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="9ec09e558111f0b3b67857dd781ebdc3" Selector="&lt;webctrl tabindex='5' tag='INPUT' type='input' /&gt;" WaitForReady="INTERACTIVE" />
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:SelectItem ContinueOnError="True" DelayAfter="5" DelayBefore="5" DisplayName="Select State" sap:VirtualizedContainerService.HintSize="654.4,135.2" sap2010:WorkflowViewState.IdRef="SelectItem_1" Item="[customersData(rowNumber)(&quot;state&quot;).tostring]">
+                <ui:SelectItem.Items>
+                  <scg:List x:TypeArguments="x:String" Capacity="50">
+                    <x:String>Choose an option...</x:String>
+                    <x:String>Alabama</x:String>
+                    <x:String>Alaska</x:String>
+                    <x:String>Arizona</x:String>
+                    <x:String>Arkansas</x:String>
+                    <x:String>California</x:String>
+                    <x:String>Colorado</x:String>
+                    <x:String>Connecticut</x:String>
+                    <x:String>Delaware</x:String>
+                    <x:String>Florida</x:String>
+                    <x:String>Georgia</x:String>
+                    <x:String>Hawaii</x:String>
+                    <x:String>Idaho</x:String>
+                    <x:String>Illinois</x:String>
+                    <x:String>Indiana</x:String>
+                    <x:String>Iowa</x:String>
+                    <x:String>Kansas</x:String>
+                    <x:String>Kentucky</x:String>
+                    <x:String>Louisiana</x:String>
+                    <x:String>Maine</x:String>
+                    <x:String>Maryland</x:String>
+                    <x:String>Massachusetts</x:String>
+                    <x:String>Michigan</x:String>
+                    <x:String>Minnesota</x:String>
+                    <x:String>Mississippi</x:String>
+                    <x:String>Missouri</x:String>
+                    <x:String>Montana</x:String>
+                    <x:String>Nebraska</x:String>
+                    <x:String>Nevada</x:String>
+                    <x:String>New Hampshire</x:String>
+                    <x:String>New Jersey</x:String>
+                    <x:String>New Mexico</x:String>
+                    <x:String>New York</x:String>
+                    <x:String>North Carolina</x:String>
+                    <x:String>North Dakota</x:String>
+                    <x:String>Ohio</x:String>
+                    <x:String>Oklahoma</x:String>
+                    <x:String>Oregon</x:String>
+                    <x:String>Pennsylvania</x:String>
+                    <x:String>Rhode Island</x:String>
+                    <x:String>South Carolina</x:String>
+                    <x:String>South Dakota</x:String>
+                    <x:String>Tennessee</x:String>
+                    <x:String>Texas</x:String>
+                    <x:String>Utah</x:String>
+                    <x:String>Vermont</x:String>
+                    <x:String>Virginia</x:String>
+                    <x:String>Washington</x:String>
+                    <x:String>West Virginia</x:String>
+                    <x:String>Wisconsin</x:String>
+                  </scg:List>
+                </ui:SelectItem.Items>
+                <ui:SelectItem.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" InformativeScreenshot="81bc93f4d756b044329dcc9bbc4c6eae" Selector="&lt;webctrl tag='SELECT' /&gt;" TimeoutMS="3000" WaitForReady="INTERACTIVE" />
+                </ui:SelectItem.Target>
+              </ui:SelectItem>
+              <ui:TypeInto DelayBetweenKeys="{x:Null}" Activate="True" ClickBeforeTyping="False" DelayBefore="5" DelayMS="5" DisplayName="Type Home Phone" EmptyField="False" sap:VirtualizedContainerService.HintSize="654.4,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_7" SendWindowMessages="False" SimulateType="True" Text="[customersData(rowNumber)(&quot;home phone&quot;).tostring]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="87274f210c71765c398786fcd0026c36" Selector="&lt;webctrl tabindex='7' tag='INPUT' type='input' /&gt;" WaitForReady="INTERACTIVE" />
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:TypeInto DelayBetweenKeys="{x:Null}" Activate="True" ClickBeforeTyping="False" DelayBefore="5" DelayMS="5" DisplayName="Type Work Phone" EmptyField="False" sap:VirtualizedContainerService.HintSize="654.4,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_8" SendWindowMessages="False" SimulateType="True" Text="[customersData(rowNumber)(&quot;work phone&quot;).tostring]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="2df99468578633b95109040229718269" Selector="&lt;webctrl tabindex='8' tag='INPUT' type='input' /&gt;" WaitForReady="INTERACTIVE" />
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:TypeInto DelayBetweenKeys="{x:Null}" Activate="True" ClickBeforeTyping="False" DelayBefore="5" DelayMS="5" DisplayName="Type Personal Email" EmptyField="False" sap:VirtualizedContainerService.HintSize="654.4,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_9" SendWindowMessages="False" SimulateType="True" Text="[customersData(rowNumber)(&quot;personal email&quot;).tostring]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="520a37a7a823142e55531d575ac79dd1" Selector="&lt;webctrl tabindex='9' tag='INPUT' type='email' /&gt;" WaitForReady="INTERACTIVE" />
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:TypeInto DelayBetweenKeys="{x:Null}" Activate="True" ClickBeforeTyping="False" DelayBefore="5" DelayMS="5" DisplayName="Type Work Email" EmptyField="False" sap:VirtualizedContainerService.HintSize="654.4,135.2" sap2010:WorkflowViewState.IdRef="TypeInto_10" SendWindowMessages="False" SimulateType="True" Text="[customersData(rowNumber)(&quot;work email&quot;).tostring]">
+                <ui:TypeInto.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="406d63227ca7eb1c0abdb9ae317b4bf2" Selector="&lt;webctrl tabindex='10' tag='INPUT' type='email' /&gt;" WaitForReady="INTERACTIVE" />
+                </ui:TypeInto.Target>
+              </ui:TypeInto>
+              <ui:Click DelayBefore="{x:Null}" DelayMS="{x:Null}" ClickType="CLICK_SINGLE" DisplayName="Click 'BUTTON'" sap:VirtualizedContainerService.HintSize="654.4,107.2" sap2010:WorkflowViewState.IdRef="Click_6" KeyModifiers="None" MouseButton="BTN_LEFT" SendWindowMessages="False" SimulateClick="True">
+                <ui:Click.CursorPosition>
+                  <ui:CursorPosition Position="Center">
+                    <ui:CursorPosition.OffsetX>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetX>
+                    <ui:CursorPosition.OffsetY>
+                      <InArgument x:TypeArguments="x:Int32" />
+                    </ui:CursorPosition.OffsetY>
+                  </ui:CursorPosition>
+                </ui:Click.CursorPosition>
+                <ui:Click.Target>
+                  <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="c3df157a4afb2295492aad8e1d01282e" Selector="&lt;webctrl aaname='Add' tag='BUTTON' /&gt;" WaitForReady="INTERACTIVE" />
+                </ui:Click.Target>
+              </ui:Click>
+              <Assign DisplayName="Counter" sap:VirtualizedContainerService.HintSize="654.4,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Int32">[rowNumber]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Int32">[rowNumber + 1]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </While>
+        </ActivityAction>
+      </ui:OpenBrowser.Body>
+    </ui:OpenBrowser>
+  </Sequence>
+</Activity>

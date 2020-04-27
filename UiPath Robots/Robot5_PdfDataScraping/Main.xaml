@@ -1,0 +1,252 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="632.8,5004.8" sap2010:WorkflowViewState.IdRef="Main_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=mscorlib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Plugin.Workflow</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Main" sap:VirtualizedContainerService.HintSize="592.8,4884.8" sap2010:WorkflowViewState.IdRef="Sequence_2">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="s:Object[]" Name="filelist" />
+      <Variable x:TypeArguments="x:Int32" Default="1" Name="counter" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Assign sap:VirtualizedContainerService.HintSize="554.4,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+      <Assign.To>
+        <OutArgument x:TypeArguments="s:Object[]">[filelist]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="s:Object[]">[directory.GetFiles("1000_Invoices","*.pdf")]</InArgument>
+      </Assign.Value>
+    </Assign>
+    <ui:WriteCell Cell="A1" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="554.4,116" sap2010:WorkflowViewState.IdRef="WriteCell_1" SheetName="Sheet1" Text="Company Name" WorkbookPath="ScrapedInvoiceData.xlsx" />
+    <ui:WriteCell Cell="B1" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="554.4,116" sap2010:WorkflowViewState.IdRef="WriteCell_2" SheetName="Sheet1" Text="Customer ID" WorkbookPath="ScrapedInvoiceData.xlsx" />
+    <ui:WriteCell Cell="C1" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="554.4,116" sap2010:WorkflowViewState.IdRef="WriteCell_3" SheetName="Sheet1" Text="Invoice Number" WorkbookPath="ScrapedInvoiceData.xlsx" />
+    <ui:WriteCell Cell="D1" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="554.4,116" sap2010:WorkflowViewState.IdRef="WriteCell_4" SheetName="Sheet1" Text="Total Amount" WorkbookPath="ScrapedInvoiceData.xlsx" />
+    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="554.4,4068" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[filelist]">
+      <ui:ForEach.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="file" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="522.4,3933.6" sap2010:WorkflowViewState.IdRef="Sequence_1">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:StartProcess Arguments="{x:Null}" WorkingDirectory="{x:Null}" DisplayName="Start Process" FileName="[&quot;1000_Invoices\Invoice &quot;+counter.ToString+&quot;.pdf&quot;]" sap:VirtualizedContainerService.HintSize="484,88" sap2010:WorkflowViewState.IdRef="StartProcess_2" />
+            <ui:WindowScope ApplicationWindow="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" Window="{x:Null}" DisplayName="Attach to PDF Invoice" sap:VirtualizedContainerService.HintSize="484,3332.8" sap2010:WorkflowViewState.IdRef="WindowScope_1" InformativeScreenshot="162c2c5649941a682e32c52443ebae25" Selector="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='Billing Invoice Template - Adobe Acrobat Reader DC' /&gt;">
+              <ui:WindowScope.Body>
+                <ActivityAction x:TypeArguments="x:Object">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Scrape Sequence" sap:VirtualizedContainerService.HintSize="453.6,3185.6" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                    <Sequence.Variables>
+                      <Variable x:TypeArguments="ui:GenericValue" Name="varCompanyName" />
+                      <Variable x:TypeArguments="ui:GenericValue" Name="varCustomerID" />
+                      <Variable x:TypeArguments="ui:GenericValue" Name="varInvoice" />
+                      <Variable x:TypeArguments="ui:GenericValue" Name="varTotal" />
+                    </Sequence.Variables>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Sequence DisplayName="Activate Accurate UI Targeting" sap:VirtualizedContainerService.HintSize="415.2,430.4" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:MaximizeWindow Window="{x:Null}" DisplayName="Maximize Window" sap:VirtualizedContainerService.HintSize="330.4,22.4" sap2010:WorkflowViewState.IdRef="MaximizeWindow_2" />
+                      <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey" EmptyField="False" sap:VirtualizedContainerService.HintSize="330.4,117.6" sap2010:WorkflowViewState.IdRef="SendHotkey_3" Key="5" KeyModifiers="Ctrl, Shift" SendWindowMessages="False" SpecialKey="False">
+                        <ui:SendHotkey.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
+                        </ui:SendHotkey.Target>
+                      </ui:SendHotkey>
+                      <ui:SendHotkey DelayBefore="{x:Null}" DelayBetweenKeys="{x:Null}" DelayMS="{x:Null}" Activate="True" ClickBeforeTyping="False" DisplayName="Send Hotkey" EmptyField="False" sap:VirtualizedContainerService.HintSize="330.4,117.6" sap2010:WorkflowViewState.IdRef="SendHotkey_4" Key="enter" KeyModifiers="None" SendWindowMessages="False" SpecialKey="True">
+                        <ui:SendHotkey.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" TimeoutMS="{x:Null}" WaitForReady="INTERACTIVE" />
+                        </ui:SendHotkey.Target>
+                      </ui:SendHotkey>
+                    </Sequence>
+                    <Sequence DisplayName="Scrape Customer ID" sap:VirtualizedContainerService.HintSize="415.2,590.4" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:AnchorBase AnchorPosition="Top" DisplayName="Anchor Base" sap:VirtualizedContainerService.HintSize="376.8,395.2" sap2010:WorkflowViewState.IdRef="AnchorBase_3">
+                        <ui:AnchorBase.Action>
+                          <ActivityAction x:TypeArguments="ui:Anchor">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="ui:Anchor" Name="ContextAnchor" />
+                            </ActivityAction.Argument>
+                            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Customer ID" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="GetValue_4">
+                              <ui:GetValue.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="6cee8f6c3b5bb5ebc5feff93d2491b9f" Selector="&lt;ctrl /&gt;" WaitForReady="INTERACTIVE" />
+                              </ui:GetValue.Target>
+                              <ui:GetValue.Value>
+                                <OutArgument x:TypeArguments="ui:GenericValue">[varCustomerID]</OutArgument>
+                              </ui:GetValue.Value>
+                            </ui:GetValue>
+                          </ActivityAction>
+                        </ui:AnchorBase.Action>
+                        <ui:AnchorBase.AnchorProvider>
+                          <ui:WaitUiElementAppear FoundElement="{x:Null}" DisplayName="Find Customer ID Anchor" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_3" WaitActive="False" WaitVisible="False">
+                            <ui:WaitUiElementAppear.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="5149860526252523b0a5027b6e50772f" Selector="&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='8' role='row' /&gt;&lt;ctrl name='CUSTOMER ID  ' role='text' /&gt;" WaitForReady="INTERACTIVE" />
+                            </ui:WaitUiElementAppear.Target>
+                          </ui:WaitUiElementAppear>
+                        </ui:AnchorBase.AnchorProvider>
+                      </ui:AnchorBase>
+                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="376.8,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_5" Text="[&quot;Customer ID= &quot;+varCustomerID]" />
+                    </Sequence>
+                    <Sequence DisplayName="Scrape Total" sap:VirtualizedContainerService.HintSize="415.2,302.4" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Total Amount" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="GetValue_1">
+                        <ui:GetValue.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="93577768e209aba4cf791b5b36904d60" Selector="&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='39' role='row' /&gt;&lt;ctrl name='TOTAL  ' role='text' /&gt;&lt;nav up='2' /&gt;&lt;ctrl name='*' role='text' idx='1' /&gt;" WaitForReady="INTERACTIVE" />
+                        </ui:GetValue.Target>
+                        <ui:GetValue.Value>
+                          <OutArgument x:TypeArguments="ui:GenericValue">[varTotal]</OutArgument>
+                        </ui:GetValue.Value>
+                      </ui:GetValue>
+                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="330.4,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="[&quot;Total= &quot;+varTotal]" />
+                    </Sequence>
+                    <Sequence DisplayName="Scrape Invoice Number" sap:VirtualizedContainerService.HintSize="415.2,590.4" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:AnchorBase AnchorPosition="Top" DisplayName="Anchor Base" sap:VirtualizedContainerService.HintSize="376.8,395.2" sap2010:WorkflowViewState.IdRef="AnchorBase_1">
+                        <ui:AnchorBase.Action>
+                          <ActivityAction x:TypeArguments="ui:Anchor">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="ui:Anchor" Name="ContextAnchor" />
+                            </ActivityAction.Argument>
+                            <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Invoice Number" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="GetValue_2">
+                              <ui:GetValue.Target>
+                                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="af41d9858a1b2c61faddc3339261da28" Selector="&lt;ctrl role='text' /&gt;" WaitForReady="INTERACTIVE" />
+                              </ui:GetValue.Target>
+                              <ui:GetValue.Value>
+                                <OutArgument x:TypeArguments="ui:GenericValue">[varInvoice]</OutArgument>
+                              </ui:GetValue.Value>
+                            </ui:GetValue>
+                          </ActivityAction>
+                        </ui:AnchorBase.Action>
+                        <ui:AnchorBase.AnchorProvider>
+                          <ui:WaitUiElementAppear FoundElement="{x:Null}" DisplayName="Find Anchor Invoive #" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="WaitUiElementAppear_1" WaitActive="False" WaitVisible="False">
+                            <ui:WaitUiElementAppear.Target>
+                              <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="049498ee83bedc77694a7a7261093473" Selector="&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='6' role='row' /&gt;&lt;ctrl name='INVOICE #  ' role='text' /&gt;" WaitForReady="INTERACTIVE" />
+                            </ui:WaitUiElementAppear.Target>
+                          </ui:WaitUiElementAppear>
+                        </ui:AnchorBase.AnchorProvider>
+                      </ui:AnchorBase>
+                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="376.8,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_3" Text="[&quot;Invoice #= &quot;+varInvoice]" />
+                    </Sequence>
+                    <Sequence DisplayName="Scrape Company Name" sap:VirtualizedContainerService.HintSize="415.2,302.4" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:GetValue ContinueOnError="{x:Null}" DisplayName="Get Company Name" sap:VirtualizedContainerService.HintSize="330.4,107.2" sap2010:WorkflowViewState.IdRef="GetValue_5">
+                        <ui:GetValue.Target>
+                          <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="eb644602b1e25bef71faf8d6b2c72ae1" Selector="&lt;wnd cls='AVL_AVView' title='AVPageView' /&gt;&lt;ctrl idx='12' role='row' /&gt;&lt;ctrl name='*' role='text' /&gt;" WaitForReady="INTERACTIVE" />
+                        </ui:GetValue.Target>
+                        <ui:GetValue.Value>
+                          <OutArgument x:TypeArguments="ui:GenericValue">[varCompanyName]</OutArgument>
+                        </ui:GetValue.Value>
+                      </ui:GetValue>
+                      <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="330.4,62.4" sap2010:WorkflowViewState.IdRef="WriteLine_6" Text="[&quot;Company Name= &quot;+varCompanyName]" />
+                    </Sequence>
+                    <Sequence DisplayName="Export Data to Excel" sap:VirtualizedContainerService.HintSize="415.2,676.8" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:WriteCell Cell="[&quot;A&quot;+ (counter + 1).ToString]" DisplayName="Append Company Name Data" sap:VirtualizedContainerService.HintSize="330.4,116" sap2010:WorkflowViewState.IdRef="WriteCell_5" SheetName="Sheet1" Text="[varCompanyName]" WorkbookPath="ScrapedInvoiceData.xlsx" />
+                      <ui:WriteCell Cell="[&quot;B&quot;+ (counter + 1).ToString]" DisplayName="Append Customer ID Data" sap:VirtualizedContainerService.HintSize="330.4,116" sap2010:WorkflowViewState.IdRef="WriteCell_6" SheetName="Sheet1" Text="[varCustomerID]" WorkbookPath="ScrapedInvoiceData.xlsx" />
+                      <ui:WriteCell Cell="[&quot;C&quot;+ (counter + 1).ToString]" DisplayName="Append Invoice ID Data" sap:VirtualizedContainerService.HintSize="330.4,116" sap2010:WorkflowViewState.IdRef="WriteCell_7" SheetName="Sheet1" Text="[varInvoice]" WorkbookPath="ScrapedInvoiceData.xlsx" />
+                      <ui:WriteCell Cell="[&quot;D&quot;+ (counter + 1).ToString]" DisplayName="Append Total Amount Data" sap:VirtualizedContainerService.HintSize="330.4,116" sap2010:WorkflowViewState.IdRef="WriteCell_8" SheetName="Sheet1" Text="[varTotal]" WorkbookPath="ScrapedInvoiceData.xlsx" />
+                    </Sequence>
+                  </Sequence>
+                </ActivityAction>
+              </ui:WindowScope.Body>
+            </ui:WindowScope>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="484,92.8" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="Info" Message="[&quot;Sucessfully Scraped &quot; + &quot;Invoice &quot;+counter.ToString+file.ToString]" />
+            <ui:CloseApplication DisplayName="Close Application 'AcroRd32.exe Billing'" sap:VirtualizedContainerService.HintSize="484,107.2" sap2010:WorkflowViewState.IdRef="CloseApplication_1">
+              <ui:CloseApplication.Target>
+                <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" TimeoutMS="{x:Null}" InformativeScreenshot="2ad7e162c578fcde8f02bbce3e7e3399" Selector="&lt;wnd app='acrord32.exe' cls='AcrobatSDIWindow' title='Billing Invoice Template - Adobe Acrobat Reader DC' /&gt;" WaitForReady="INTERACTIVE" />
+              </ui:CloseApplication.Target>
+            </ui:CloseApplication>
+            <Assign sap:VirtualizedContainerService.HintSize="484,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+              <Assign.To>
+                <OutArgument x:TypeArguments="x:Int32">[counter]</OutArgument>
+              </Assign.To>
+              <Assign.Value>
+                <InArgument x:TypeArguments="x:Int32">[counter+1]</InArgument>
+              </Assign.Value>
+            </Assign>
+          </Sequence>
+        </ActivityAction>
+      </ui:ForEach.Body>
+    </ui:ForEach>
+  </Sequence>
+</Activity>
